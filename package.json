@@ -1,0 +1,16 @@
+{
+  "name": "url_shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Ian",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.1",
+    "express-handlebars": "^7.1.2"
+  }
+}
