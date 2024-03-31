@@ -1,35 +1,25 @@
 <header>
-
-  <!-- navigation -->
-  <nav class="navbar navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="/">
-        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
-          width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
-        我的餐廳清單
-      </a>
-    </div>
-  </nav>
-
-  <div class="aa">
-    <div class="banner"></div>
-  </div>
 </header>
 
-<!-- search bar -->
-<div class="container bar">
-  <div class="bar-outer">
-    <div class="bar-inner">
-      <form action="/restaurants" method="POST">
-        <h4 class="mb-2">請輸入網址：</h4>
-        <div class="input-group">
-          <input type="text" name="fullUrl" class="form-control" placeholder="請輸入網址" aria-label="Restaurant Name..."
-            value="" aria-describedby="search-button" value="{{keyword}}">
-          <div class="input-group-append">
-            <button class="btn btn-major" type="submit"><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-      </form>
-    </div>
+<div class="h1">
+  <h1>URL shortener</h1>
+</div>
+<div class="aa">
+  <div class="banner">
   </div>
+</div>
+<div class="container">
+
+
+  <form action="/shortUrls" method="POST" class="my-4 align-items-center">
+    <div class="col inputURL-dev">
+      <label for="fullUrl" class="sr-only URL_label">URL</label>
+      <input required placeholder="Please enter URL" type="url" name="url" id="fullUrl"
+        class="form-control mr-2 inputURL" value="{{fullURL}}">
+    </div>
+    <div class="col-auto shorten">
+      <button class="btn btn-success" type="submit">Shorten</button>
+    </div>
+  </form>
+
 </div>

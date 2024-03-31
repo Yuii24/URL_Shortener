@@ -14,12 +14,6 @@ header {
   align-items: center;
 }
 
-/* .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .banner {
   /* position: relative; */
   display: flex;
@@ -38,6 +32,13 @@ header {
   width: 800px;
 }
 
+.inputURL::placeholder {
+  font-weight: bold;
+  color: red !important;
+  text-align: center;
+  font-size: 20px !important;
+}
+
 .inputURL-dev {
   display: flex;
   justify-content: center;
@@ -46,8 +47,8 @@ header {
 
 .btn-success {
   margin-top: 20px;
-  height: 80px;
-  width: 300px;
+  height: 50px;
+  width: 200px;
 }
 
 .shorten {
@@ -56,82 +57,28 @@ header {
   align-items: center;
 }
 
-.bar .bar-outer {
-  margin: 0 auto;
-  max-width: 680px;
-  background-color: #fce2cf;
-  border-radius: 8px;
-  padding: 20px 30px;
-  border: 0;
-  margin-top: -60px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.bar .bar-inner h4 {
-  color: #9b4b4b;
-}
-
-.form-control::placeholder {
-  color: #aaaaaa;
-  font-size: 0.8rem;
-}
-
-.btn-major {
-  background-color: #9b4b4b;
-  color: white;
-}
-
-.form-control:focus {
-  box-shadow: none;
-  border-color: #ced4da;
-}
-
-.card {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-  height: 180px;
-}
-
-.card-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.restaurant-category {
-  color: #666666;
-  font-size: 0.8rem;
-}
-
-.restaurant-show-title {
-  position: relative;
-  top: -100px;
-  color: white;
+.h2_show {
   text-align: center;
-  font-size: 3rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 992px) {
-
-  .card img {
-    height: 115px;
-  }
+.shorURL_showdev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-
-  .restaurant-show-title {
-    font-size: 2rem;
-  }
+.shorURL_showlabel {
+  color: blue;
+  font-size: 30px;
+  background: linear-gradient(90deg, #ff3c41, #fc0, #0ebeff);
+  background-size: 0 3px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  cursor: pointer;
+  transition: 0.4s all;
 }
 
-@media screen and (max-width: 575px) {
-
-  .card img {
-    height: auto;
-  }
-
+.shorURL_showlabel:hover {
+  background-size: 100% 3px;
+  color: red;
 }

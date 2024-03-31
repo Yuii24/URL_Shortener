@@ -9,11 +9,27 @@
 </header>
 
 <div class="container">
-  <h2>Succes! Please use this link:</h2>
-  <div class="col">
-    <label>http://localhost:3000/shortURL/{{shortURL}}</label>
+  <h2 class="h2_show">Succes! Please use this link:</h2>
+  <div class="col shorURL_showdev">
+    <label class="shorURL_showlabel" id="generatedURL">http://localhost:3000/shortURL/{{shortURL}}</label>
   </div>
-  <div class="col-auto">
-    <button class="btn btn-success" type="submit">Copy</button>
+  <div class="col-auto shorten">
+    <button class="btn btn-success copy" onclick="copy()">Copy</button>
   </div>
+  <div class="col-auto shorten">
+    <a href="http://localhost:3000/"> home </a>
+  </div>
+
+
+
+
+  <script>
+    function copy() {
+      const URL = document.getElementById("generatedURL")
+      navigator.clipboard.writeText(URL.innerText)
+        .then(() => alert("Shorten URL was copied"))
+        .catch(error => console.log(error))
+    }
+  </script>
+
 </div>

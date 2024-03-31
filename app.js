@@ -5,8 +5,7 @@ const crypto = require('crypto')
 const { engine } = require("express-handlebars");
 const app = express();
 const port = 3000;
-const URL = require("./URL.json");
-// const filePath = path.join(__dirname, 'public', 'json', 'URL.json');
+
 
 app.engine(".hbs", engine({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
@@ -15,7 +14,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 const filePath = path.join(__dirname, 'URL.json');
-console.log(filePath);
 
 let urlData = {};
 
@@ -32,7 +30,6 @@ function shortenCode(len) {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
   for (let i = 0; i < len; i++) {
-
     const randomByte = crypto.randomBytes(1)[0];
     const index = randomByte % chars.length;
     result += chars[index];
@@ -43,10 +40,9 @@ function shortenCode(len) {
 
 
 app.get("/", (req, res) => {
-  res.render("index2");
+  res.render("index");
 })
 
-// 01
 
 // app.post("/shortUrls", (req, res) => {
 //   const url = req.body.url; // 获取表单提交的URL
@@ -86,8 +82,7 @@ app.post("/shortUrls", (req, res) => {
   const fullURL = req.body.url;
 
   if (!urlData) {
-    res.render("index2");
-    console.log("if(!urlData)")
+    res.render("index");
     return;
   }
 
@@ -96,12 +91,10 @@ app.post("/shortUrls", (req, res) => {
   if (urlData[fullURL]) {
     const shortURL = urlData[fullURL];
     res.render("show.hbs", { shortURL });
-    console.log("res.render(index2, { shortURL });")
   } else {
 
     // creat shorturl
     const shortURL = shortenCode(5)
-    console.log(shortURL);
 
     // save shorturl
     urlData[fullURL] = shortURL;
@@ -118,8 +111,6 @@ app.get("/shortURL/:shortCode", (req, res) => {
   for (const code in urlData) {
     if (urlData[code] === shortCode) {
       url = code;
-      console.log(code);
-      console.log(urlData[code]);
       break;
     }
   }
