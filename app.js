@@ -43,40 +43,6 @@ app.get("/", (req, res) => {
   res.render("index");
 })
 
-
-// app.post("/shortUrls", (req, res) => {
-//   const url = req.body.url; // 获取表单提交的URL
-//   const shortUrls = generateRandomAlphaNum(5); // 生成短链接
-
-//   fs.readFile(filePath, 'utf8', (err, data) => {
-//     if (err) {
-//       console.error('Error reading JSON file:', err);
-//       return res.status(500).send('An error occurred');
-//     }
-
-//     let urls;
-//     try {
-//       urls = JSON.parse(data || '{}'); // 尝试解析文件内容，确保为空对象而不是数组
-//     } catch (parseErr) {
-//       console.error('Error parsing JSON:', parseErr);
-//       return res.status(500).send('An error occurred while parsing JSON');
-//     }
-
-//     urls[url] = shortUrls; // 将新的URL和短链接添加到对象中
-
-//     fs.writeFile(filePath, JSON.stringify(urls, null, 2), (err) => {
-//       if (err) {
-//         console.error('Error writing JSON file:', err);
-//         return res.status(500).send('An error occurred while writing JSON');
-//       }
-//       console.log(`Received URL: ${url}, Short URL: ${shortUrls}`);
-//       res.send('URL added successfully'); // 确认URL添加成功
-//     });
-//   });
-// });
-
-// 02 
-
 app.post("/shortUrls", (req, res) => {
 
   const fullURL = req.body.url;
@@ -85,7 +51,6 @@ app.post("/shortUrls", (req, res) => {
     res.render("index");
     return;
   }
-
 
   // check same shortURL
   if (urlData[fullURL]) {
