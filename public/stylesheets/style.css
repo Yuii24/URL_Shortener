@@ -2,25 +2,61 @@ header {
   overflow: hidden;
 }
 
-.navbar .navbar-brand {
-  color: #4592af;
+.h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.navbar .navbar-brand:hover {
-  color: #226089;
+.aa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
 .banner {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: -1;
-  margin: -5px;
-  height: 550px;
-  background: #dddddd center center url('https://media1.tenor.com/m/upZRqqfUnVEAAAAd/shy-lily.gif');
+  margin-bottom: 10px;
+  height: 300px;
+  width: 300px;
+  background: center center url('https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png');
   background-size: cover;
-  filter: blur(3px);
 }
 
-.search-bar .search-bar-outer {
+.inputURL {
+  border: 5px solid black;
+  width: 800px;
+}
+
+.inputURL-dev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-success {
+  margin-top: 20px;
+  height: 80px;
+  width: 300px;
+}
+
+.shorten {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar .bar-outer {
   margin: 0 auto;
   max-width: 680px;
   background-color: #fce2cf;
@@ -31,7 +67,7 @@ header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.search-bar .search-bar-inner h4 {
+.bar .bar-inner h4 {
   color: #9b4b4b;
 }
 
